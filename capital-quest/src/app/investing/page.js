@@ -29,12 +29,12 @@ export default function Investing() {
             </div>
 
             {/* Risk Section */}
-            <div style={{ padding: '20px', backgroundColor: 'lightcoral', borderRadius: '8px', minHeight: '100px', width: '300px', marginLeft: '15%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '80px' }}>
-              <Typography variant="h5" style={{ color: 'white', textAlign: 'center' }}>Risk</Typography>
+            <div style={{ padding: '20px', backgroundColor: 'white', borderRadius: '8px', minHeight: '100px', width: '300px', marginLeft: '15%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '80px' }}>
+              <Typography variant="h5" style={{ color: 'black', textAlign: 'center' }}>Risk</Typography>
             </div>
 
             {/* Long Rectangle Below Risk */}
-            <div style={{ padding: '20px', backgroundColor: 'lightcoral', borderRadius: '8px', minHeight: '600px', width: '400px', marginLeft: '7.5%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ padding: '20px', backgroundColor: 'white', borderRadius: '8px', minHeight: '600px', width: '400px', marginLeft: '7.5%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               {/* Content or placeholder */}
             </div>
           </div>
@@ -58,12 +58,12 @@ export default function Investing() {
             </div>
 
             {/* Reward Section */}
-            <div style={{ padding: '20px', backgroundColor: 'lightgreen', borderRadius: '8px', minHeight: '100px', width: '300px', marginLeft: '25%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '80px' }}>
-              <Typography variant="h5" style={{ color: 'white', textAlign: 'center' }}>Reward</Typography>
+            <div style={{ padding: '20px', backgroundColor: 'white', borderRadius: '8px', minHeight: '100px', width: '300px', marginLeft: '25%', display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '80px' }}>
+              <Typography variant="h5" style={{ color: 'black', textAlign: 'center' }}>Reward</Typography>
             </div>
 
             {/* Long Rectangle Below Reward */}
-            <div style={{ padding: '20px', backgroundColor: 'lightgreen', borderRadius: '8px', minHeight: '600px', width: '400px', marginLeft: '16.5%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <div style={{ padding: '20px', backgroundColor: 'white', borderRadius: '8px', minHeight: '600px', width: '400px', marginLeft: '16.5%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
               {/* Content or placeholder */}
             </div>
           </div>
