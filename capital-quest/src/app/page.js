@@ -1,45 +1,31 @@
-// page.js
-import React from 'react';
-import './globals.css';
+"use client";
 
+import { Button, Typography } from "@mui/material";
+import Image from "next/image";
+import Link from 'next/link';
 
-const Page = () => {
-  return (
-    <div className="container">
-      <div className="header">
-        <img src="/capital quest outlined logo.png" alt="Capital Quest Logo" className = "logo-top-right" />
-        <h1>Credit</h1>
-      </div>
-      <div className="card-section">
-        <div className="credit-card">
-          <span className= "credit-card-text">Credit Card</span>
-          <img src="/capital quest outlined logo.png" alt="Capital Quest Logo" className="logo-bottom-right"/>
-          </div>
-          <div className="challenge-container">
-            <div className="challenge">
-              <p>CHALLENGE</p>
-              <p>Can missing a credit card payment negatively impact your credit score?</p>
-                <button>YES</button>
-                <button>NO</button>
-                
-        </div>
-        <div className="challenge">
-          <p>CHALLENGE</p>
-          <p>Can exceeding your credit card limit result in additional fees?</p>
-          <button>YES</button>
-          <button>NO</button>
-        </div>
-      </div>
-      </div>
-      <div className="mini-game">
-        <h2>MINI GAME</h2>
-        <p>CURRENT BALANCE: $500</p>
-        <p>LIMIT: $1000</p>
-        <button>PAY</button>
-        <button>SPEND</button>
-      </div>
-      <button className="resources-button">Resources</button>
-    </div>
-  );
-}
-export default Page;
+export default function Home() {
+    return (
+        <main className="grad flex min-h-screen flex-col items-center justify-between pt-[-20px] p-0">
+            <div className="flex flex-col items-center justify-center flex-grow text-center p-10 space-y-[-40px] mb-[200px]">
+                <Typography variant="h4" style={{color:'white', fontWeight: 'bold'}}>Introducing</Typography>
+                <Image src="/capital quest outlined logo.png" width={500} height={500} alt="Capital Quest logo image" />
+                <Typography variant="h6" style={{ color: 'white', fontWeight: 'bold', fontSize: '28px' }}>LEARN FINANCIAL LITERACY WITH CAPITAL ONE!</Typography>  
+            </div>
+            <div className="text-center p-0 mb-[200px]">
+                <Link href="/savings" passHref>
+                    <Button variant="contained" 
+                            color="error"
+                            size="large"
+                            sx = {{fontSize:'1.5rem', padding:'20px 94px', borderRadius: '40px' }}
+                            > 
+                        Begin
+                    </Button>
+                </Link>
+            </div>
+            <div className="flex justify-center mt-auto">
+                <Image src="/capital one logo.png" width={200} height={200} alt="Capital One logo image"/>
+            </div>
+        </main>
+    );
+
