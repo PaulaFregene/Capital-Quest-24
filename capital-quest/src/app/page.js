@@ -1,13 +1,45 @@
-import Image from "next/image";
+// page.js
+import React from 'react';
+import './globals.css';
 
-export default function Home() {
+
+const Page = () => {
   return (
-    <main className=" grad flex min-h-screen flex-col items-center justify-between p-24">
-      <div>
-        <div>Introducing</div>
-        <Image src="/capital quest outlined logo.png" width={500} height={500} alt="Capital Quest logo image"/>
-        <div>LEARN FINANCIAL LITERACY WITH CAPITAL ONE! </div>
+    <div className="container">
+      <div className="header">
+        <img src="/capital quest outlined logo.png" alt="Capital Quest Logo" className = "logo-top-right" />
+        <h1>Credit</h1>
       </div>
-    </main>
+      <div className="card-section">
+        <div className="credit-card">
+          <span className= "credit-card-text">Credit Card</span>
+          <img src="/capital quest outlined logo.png" alt="Capital Quest Logo" className="logo-bottom-right"/>
+          </div>
+          <div className="challenge-container">
+            <div className="challenge">
+              <p>CHALLENGE</p>
+              <p>Can missing a credit card payment negatively impact your credit score?</p>
+                <button>YES</button>
+                <button>NO</button>
+                
+        </div>
+        <div className="challenge">
+          <p>CHALLENGE</p>
+          <p>Can exceeding your credit card limit result in additional fees?</p>
+          <button>YES</button>
+          <button>NO</button>
+        </div>
+      </div>
+      </div>
+      <div className="mini-game">
+        <h2>MINI GAME</h2>
+        <p>CURRENT BALANCE: $500</p>
+        <p>LIMIT: $1000</p>
+        <button>PAY</button>
+        <button>SPEND</button>
+      </div>
+      <button className="resources-button">Resources</button>
+    </div>
   );
 }
+export default Page;
