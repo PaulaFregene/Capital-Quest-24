@@ -6,7 +6,7 @@ export default function Header() {
         <div>
             <div className= "flex flex-row items-start justify-between">
                 <button>
-                    <Link href="/" passHref>
+                    <Link href="/game_home" passHref>
                         <Image src="/Menu.png" width={200} height={200} alt="Menu button" />
                     </Link>
                 </button>

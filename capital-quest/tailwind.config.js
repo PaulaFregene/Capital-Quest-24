@@ -12,6 +12,15 @@ module.exports = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      width: {
+        'circle-lg': '200px', // Custom size for larger circles
+      },
+      height: {
+        'circle-lg': '200px', // Custom size for larger circles
+      },
+      borderWidth: {
+        'circle-lg': '6px', // Custom border width for larger circles
+      },
     },
   },
   plugins: [],
