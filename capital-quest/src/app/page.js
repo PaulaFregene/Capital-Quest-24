@@ -3,7 +3,6 @@
 import { Button, Typography } from "@mui/material";
 import Image from "next/image";
 import Link from 'next/link';
-import Credit from "./credit/page";
 
 export default function Home() {
     return (
@@ -14,7 +13,7 @@ export default function Home() {
                 <Typography variant="h6" style={{ color: 'white', fontWeight: 'bold', fontSize: '28px' }}>LEARN FINANCIAL LITERACY WITH CAPITAL ONE!</Typography>  
             </div>
             <div className="text-center p-0 mb-[200px]">
-                <Link href="/savings" passHref>
+                <Link href="/game_home" passHref>
                     <Button variant="contained" 
                             color="error"
                             size="large"
@@ -27,7 +26,6 @@ export default function Home() {
             <div className="flex justify-center mt-auto">
                 <Image src="/capital one logo.png" width={200} height={200} alt="Capital One logo image"/>
             </div>
-            <Credit />
         </main>
     );
 }

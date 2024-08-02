@@ -1,8 +1,10 @@
 import React from 'react';
+import Header from '@/components/Header';
 
 const Credit = () => {
   return (
     <div className="container">
+      <Header/>
       <div className="header">
         <img src="/capital quest outlined logo.png" alt="Capital Quest Logo" className = "logo-top-right" />
         <h1>Credit</h1>
