@@ -1,16 +1,32 @@
 "use client"
+
 import { Button, Typography, LinearProgress } from "@mui/material";
 import Image from "next/image";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from "next/link";
 
 export default function game_home() {
-
   const [progress, setProgress] = useState(0);
 
+  useEffect(() => {
+    // Load progress from local storage
+    const savedProgress = localStorage.getItem('progress');
+    if (savedProgress) {
+      setProgress(parseInt(savedProgress, 10));
+    }
+  }, []);
+
   const handleClick = (label) => {
+    // Update progress only if not already visited
     //alert(`Clicked on ${label}`);   # This sends a message after the click, disable for now but could be useful later
-    setProgress(prevProgress => Math.min(prevProgress + 20, 100));
+    const visitedPages = JSON.parse(localStorage.getItem('visitedPages')) || {};
+    if (!visitedPages[label]) {
+      const newProgress = Math.min(progress + 20, 100);
+      setProgress(newProgress);
+      localStorage.setItem('progress', newProgress);
+      visitedPages[label] = true;
+      localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
+    }
   };
 
   return (
