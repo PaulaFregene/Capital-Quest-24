@@ -4,29 +4,29 @@ import { Button, Typography, LinearProgress } from "@mui/material";
 import Image from "next/image";
 import React, { useState, useEffect } from 'react';
 import Link from "next/link";
+import Confetti from 'react-confetti';
+import { useWindowSize } from 'react-use';
 
-export default function game_home() {
-  const [progress, setProgress] = useState(0);
+
+export default function GameHome() {
+  const [progress, setProgress] = useState(() => {
+    if (typeof window !== "undefined") {
+      const savedProgress = localStorage.getItem('progress');
+      return savedProgress !== null ? parseInt(savedProgress, 10) : 0;
+    }
+    return 0;
+  });
+
+  const { width, height } = useWindowSize();
 
   useEffect(() => {
-    // Load progress from local storage
-    const savedProgress = localStorage.getItem('progress');
-    if (savedProgress) {
-      setProgress(parseInt(savedProgress, 10));
+    if (typeof window !== "undefined") {
+      localStorage.setItem('progress', progress);
     }
-  }, []);
+  }, [progress]);
 
   const handleClick = (label) => {
-    // Update progress only if not already visited
-    //alert(`Clicked on ${label}`);   # This sends a message after the click, disable for now but could be useful later
-    const visitedPages = JSON.parse(localStorage.getItem('visitedPages')) || {};
-    if (!visitedPages[label]) {
-      const newProgress = Math.min(progress + 20, 100);
-      setProgress(newProgress);
-      localStorage.setItem('progress', newProgress);
-      visitedPages[label] = true;
-      localStorage.setItem('visitedPages', JSON.stringify(visitedPages));
-    }
+    setProgress(prevProgress => Math.min(prevProgress + 20, 100));
   };
 
   return (
@@ -35,7 +35,7 @@ export default function game_home() {
 
       {/* Progress Bar */}
       <div className="w-full mt-4 mb-8 px-8">
-      <LinearProgress variant="determinate" value={progress} sx={{ height: '60px', borderRadius: '30px','& .MuiLinearProgress-bar':{backgroundColor: 'red',}, }} />
+        <LinearProgress variant="determinate" value={progress} sx={{ height: '60px', borderRadius: '30px','& .MuiLinearProgress-bar':{backgroundColor: 'red',}, }} />
       </div>
 
       {/* Container for circles and lines */}
@@ -65,13 +65,13 @@ export default function game_home() {
 
         {/* Circle 2 */}
         <Link href="/savings" passHref>
-        <Button variant="contained" 
-          className="w-circle-lg h-circle-lg rounded-full bg-blue-900 flex items-center justify-center absolute"
-          style={{ left: '10%', top: '20%', zIndex: 2 }}
-          onClick={() => handleClick('Savings')}
-        >
-          <span className="text-white font-bold">Savings</span>
-        </Button>
+          <Button variant="contained" 
+            className="w-circle-lg h-circle-lg rounded-full bg-blue-900 flex items-center justify-center absolute"
+            style={{ left: '10%', top: '20%', zIndex: 2 }}
+            onClick={() => handleClick('Savings')}
+          >
+            <span className="text-white font-bold">Savings</span>
+          </Button>
         </Link>
 
         {/* Line 2 */}
@@ -89,13 +89,13 @@ export default function game_home() {
 
         {/* Circle 3 */}
         <Link href="/credit" passHref>
-        <Button variant="contained" 
-          className="w-circle-lg h-circle-lg rounded-full bg-blue-900 flex items-center justify-center absolute"
-          style={{ left: '10%', top: '70%', zIndex: 2 }}
-          onClick={() => handleClick('Credit')}
-        >
-          <span className="text-white font-bold">Credit</span>
-        </Button>
+          <Button variant="contained" 
+            className="w-circle-lg h-circle-lg rounded-full bg-blue-900 flex items-center justify-center absolute"
+            style={{ left: '10%', top: '70%', zIndex: 2 }}
+            onClick={() => handleClick('Credit')}
+          >
+            <span className="text-white font-bold">Credit</span>
+          </Button>
         </Link>
 
         {/* Line 4 */}
@@ -145,6 +145,14 @@ export default function game_home() {
       <div className="flex justify-center mt-auto">
         <Image src="/capital quest outlined logo.png" width={200} height={200} alt="Capital One outlined logo" />
       </div>
+
+      {progress === 100 && (
+        <Confetti
+          width={width}
+          height={height}
+          recycle={false}
+        />
+      )}
     </div>
   );
 }
