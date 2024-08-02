@@ -133,13 +133,15 @@ export default function GameHome() {
         ></div>
 
         {/* Circle 5 */}
+        <Link href="/investing" passHref>
         <Button variant="contained" 
-          className="w-circle-lg h-circle-lg rounded-full bg-blue-900 flex items-center justify-center absolute"
-          style={{ right: '15%', top: '90%' }}
-          onClick={() => handleClick('Investing')}
-        >
-          <span className="text-white font-bold">Investing</span>
+        className="w-circle-lg h-circle-lg rounded-full bg-blue-900 flex items-center justify-center absolute"
+        style={{ right: '15%', top: '90%' }}
+        onClick={() => handleClick('Investing')}
+       >
+        <span className="text-white font-bold">Investing</span>
         </Button>
+      </Link>
       </div>
 
       <div className="flex justify-center mt-auto">
