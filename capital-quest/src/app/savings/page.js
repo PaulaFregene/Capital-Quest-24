@@ -1,5 +1,5 @@
 'use client'
-
+import { Button, Typography } from "@mui/material";
 import React, { useState, useEffect } from 'react';
 import Header from '@/components/Header';
 import './savings.css'; 
@@ -25,21 +25,27 @@ export default function Savings() {
     }, []);
 
     return (
-        <div style={{ backgroundColor: "#DCE9F1" }}>
-            <Header style={{ backgroundColor: "blue" }} />
-            <div className="container flex min-h-screen flex-col items-center justify-between" style={{ backgroundColor: "blue" }}>
-                <h1>Savings</h1>
-                <p>Instructions: <br />
+        <div style={{ backgroundColor: "#004977" }}>
+            <Header />
+            <div className="container flex-col items-center justify-between p-auto" style={{ backgroundColor: "#004977", minHeight: '100vh', minWidth: '100vw', display: 'flex', flexDirection: 'column' }}>
+            <Typography variant="h1" style={{ color: 'white', marginTop: '20px' }}>
+                    Savings
+                </Typography>
+                <Typography variant="body1" style={{ color: 'white', textAlign: 'center', margin: '20px 0' }}>
+                    Instructions: <br />
                     Interest is like a reward the bank gives you for trusting them to look after your money in your savings account. 
                     The more money you have in your account, and the longer you keep it there, the more interest you can earn. <br />
-                </p>
-                <p>Play around with depositing and withdrawing money into your savings account 
+                    Play around with depositing and withdrawing money into your savings account 
                     and watch how it affects your savings account balance over time!
-                </p>
-                <div>
+                </Typography>
+                <div className="container flex-col items-center justify-between" style={{ backgroundColor: "#D2E5F2" }}>
+                <Typography variant="h4" style={{ color: 'black', margin: '0' }}>
                     Month: {months.toFixed(1)}
+                </Typography>
                 </div>
-                <h2>Savings Account Balance</h2>
+                <Typography variant="h3" style={{ color: 'white', margin: '20px 0' }}>
+                    Savings Account Balance:
+                </Typography>
                 <div>
                     <BalanceManager balance={balance} setBalance={setBalance} />
                     <DividendUpdater balance={balance} ytdDividend={ytdDividend} />
@@ -50,8 +56,7 @@ export default function Savings() {
                 <div>
                     Resources Button
                 </div>
-            </div>
-            Hello
+        </div>
         </div>
     );
 }

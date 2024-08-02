@@ -1,13 +1,16 @@
+import { Button, Typography } from "@mui/material";
 import React from 'react';
 import Header from '@/components/Header';
 
 const Credit = () => {
   return (
-    <div className="container">
+    <div style={{backgroundImage:"linear-gradient(#D03027, #FFFFFF)"}}>
       <Header/>
+      <div class="min-h-screen">
       <div className="header">
-        <img src="/capital quest outlined logo.png" alt="Capital Quest Logo" className = "logo-top-right" />
-        <h1>Credit</h1>
+      <Typography variant="h1" style={{ color: 'white', marginTop: '20px' }}>
+                    Credit
+                </Typography>
       </div>
       <div className="card-section">
         <div className="credit-card">
@@ -38,6 +41,7 @@ const Credit = () => {
         <button>SPEND</button>
       </div>
       <button className="resources-button">Resources</button>
+    </div>
     </div>
   );
 }
